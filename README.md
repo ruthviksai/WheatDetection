@@ -41,5 +41,5 @@ After training the model, I have evaluated the model on the test dataset by runn
 ![alt text](https://github.com/ruthviksai/WheatDetection/blob/main/test_images.png?raw=true)
 
 ### Code/Video
-The code is present in the file "WheatDetection.ipynb". The video recording of the presentation of project is present in the file "presentation.mp4".
+The code is present in the file "WheatDetection.ipynb". The video recording of the presentation of project is present in the file "zoom_0.mp4".
 
