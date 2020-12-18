@@ -40,5 +40,6 @@ Then I have trained the model for 8 epochs. The training loss has gone down from
 After training the model, I have evaluated the model on the test dataset by running it on test images and predicting bounding boxes for the images. The testing data does not have data regarding the bounding boxes for test images and thus the model predicted bounding boxes have nothing to be compared against. So I couldn't create a numerical estimate of the results. But I have produced test images with predicted bounding boxes and it can be explicitly seen that the model has done a very good job in predicting the bounding boxes: <br />
 ![alt text](https://github.com/ruthviksai/WheatDetection/blob/main/test_images.png?raw=true)
 
-
+### Code/Video
+The code is present in the file "WheatDetection.ipynb". The video recording of the presentation of project is present in the file "presentation.mp4".
 
