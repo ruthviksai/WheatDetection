@@ -18,9 +18,9 @@ I downladed the data from a Kaggle competition that was held last year on predic
 
 ### Understanding the dataset:
 The training data is in a file called "train.csv". Here is a preview of the first few lines of the data: <br />
-![alt text](https://github.com/ruthviksai/WheatPrediction/blob/main/train_data.png?raw=true)
+![alt text](https://github.com/ruthviksai/WheatDetection/blob/main/train_data.png?raw=true)
 The image_id represents the unique ID associated with an image of wheat crop. Width and height represent the dimensions of the image. All images are 1024x1024. bbox represents the dimensions of a bounding box in the image associated with image_id. Each image has multiple bounding boxes and that's the reason there are multiple rows associated with a single image_id. Each row contains only one bounding box. The format of the bounding box is [xmin, ymin, width, height] It has the coordinates of left most point, width and height of the image. Since the images are gathered from various regions across the world, the variable source contains information about where the image is taken from. There are 3373 unique images in the train dataset. I have divided the train dataset into training and validating data as follows: 80% training data and 20% validating data. This resulted in 2698 training images and 675 validating images. Here are 4 exmaple training images with bounding boxes: <br />
-![alt text](https://github.com/ruthviksai/WheatPrediction/blob/main/train_images.png?raw=true)
+![alt text](https://github.com/ruthviksai/WheatDetection/blob/main/train_images.png?raw=true)
 
 ### Data transformation:
 I have used Albumentations python library to transform the training and validation data. Albumentations is a Python library for image augmentation. It is used to increase the quality of the trained models.
@@ -34,11 +34,11 @@ in_features = model.roi_heads.box_predictor.cls_score.in_features
 model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
 ```
 Then I have trained the model for 8 epochs. The training loss has gone down from 0.96 in epoch 1 to 0.76 in epoch 8. The validation loss has gone down from 1.16 in epoch 1 to 1.004 in epoch 8. The losses have come down to an optimal level and thus 8 epochs worked out to produce good results. The plots for both the losses is: <br />
-![alt text](https://github.com/ruthviksai/WheatPrediction/blob/main/losses.png?raw=true)
+![alt text](https://github.com/ruthviksai/WheatDetection/blob/main/losses.png?raw=true)
 
 ### Evaluation/Results:
 After training the model, I have evaluated the model on the test dataset by running it on test images and predicting bounding boxes for the images. The testing data does not have data regarding the bounding boxes for test images and thus the model predicted bounding boxes have nothing to be compared against. So I couldn't create a numerical estimate of the results. But I have produced test images with predicted bounding boxes and it can be explicitly seen that the model has done a very good job in predicting the bounding boxes: <br />
-![alt text](https://github.com/ruthviksai/WheatPrediction/blob/main/test_images.png?raw=true)
+![alt text](https://github.com/ruthviksai/WheatDetection/blob/main/test_images.png?raw=true)
 
 
 
